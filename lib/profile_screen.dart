@@ -46,9 +46,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final w = size.width;
-
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
 
@@ -90,7 +87,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(color: primaryGold, width: 3),
-                              color: primaryGold.withOpacity(0.1),
+                              color: primaryGold.withValues(alpha: 0.1),
                             ),
                             child: const Icon(Icons.person, size: 50, color: primaryGold),
                           ),
@@ -146,8 +143,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               borderRadius: BorderRadius.circular(20),
                               gradient: LinearGradient(
                                 colors: [
-                                  primaryGold.withOpacity(0.2),
-                                  primaryGold.withOpacity(0.05),
+                                  primaryGold.withValues(alpha: 0.2),
+                                  primaryGold.withValues(alpha: 0.05),
                                 ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,

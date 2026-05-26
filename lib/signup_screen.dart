@@ -140,7 +140,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 borderRadius: BorderRadius.circular(30),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.35),
+                                    color: Colors.black.withValues(alpha: 0.35),
                                     blurRadius: 22,
                                     offset: const Offset(0, 8),
                                   ),
@@ -246,7 +246,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
             if (isLoading)
               Container(
-                color: Colors.black.withOpacity(0.3),
+                color: Colors.black.withValues(alpha: 0.3),
                 child: const Center(child: CircularProgressIndicator(color: Color(0xFFFBC02D))),
               ),
           ],

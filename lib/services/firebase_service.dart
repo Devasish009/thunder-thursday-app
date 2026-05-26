@@ -161,17 +161,22 @@ class FirebaseService {
     String? talentDescription,
     String? bhavan,
     int? yearOfStudy,
+    String? phone,
   }) async {
     try {
       final User? user = _auth.currentUser;
       if (user == null) return {'success': false, 'message': 'Please login first'};
       
+      // Check if already registered for this specific school
       final existing = await _firestore
           .collection('registrations')
           .where('user_id', isEqualTo: user.uid)
+          .where('school', isEqualTo: school)
           .get();
       
-      if (existing.docs.isNotEmpty) return {'success': false, 'message': 'Already registered!'};
+      if (existing.docs.isNotEmpty) {
+        return {'success': false, 'message': 'You have already registered for $school!'};
+      }
       
       await _firestore.collection('registrations').add({
         'user_id': user.uid,
@@ -182,6 +187,7 @@ class FirebaseService {
         'talent_description': talentDescription ?? '',
         'bhavan': bhavan ?? '',
         'year_of_study': yearOfStudy ?? 0,
+        'phone': phone ?? '',
         'status': 'pending',
         'registered_at': FieldValue.serverTimestamp(),
       });

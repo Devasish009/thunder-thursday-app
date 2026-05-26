@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'unleash_screen.dart';
 import 'hall_of_lightening_screen.dart';
 import 'creators_screen.dart';
@@ -12,6 +11,7 @@ import 'profile_screen.dart';
 import 'widgets/notification_badge.dart';
 import 'notifications_screen.dart';
 import 'services/firebase_service.dart';
+import 'widgets/ui_components.dart';
 
 /// 🎨 COLORS
 const Color primaryGold = Color(0xFFD9A62E);
@@ -143,32 +143,32 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const Divider(),
-              _drawerItem(icon: Icons.person, title: "Profile", isDark: isDark, onTap: () {
+              CustomDrawerItem(icon: Icons.person, title: "Profile", isDark: isDark, onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => ProfileScreen(isDark: isDark, onThemeToggle: widget.onThemeToggle, onLogout: widget.onLogout)));
               }),
-              _drawerItem(icon: Icons.bolt_outlined, title: "Register", isDark: isDark, onTap: () {
+              CustomDrawerItem(icon: Icons.bolt_outlined, title: "Register", isDark: isDark, onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => RegistrationScreen(isDark: isDark, onThemeToggle: widget.onThemeToggle, onLogout: widget.onLogout)));
               }),
-              _drawerItem(icon: Icons.wifi_tethering, title: "Live Voting", isDark: isDark, onTap: () {
+              CustomDrawerItem(icon: Icons.wifi_tethering, title: "Live Voting", isDark: isDark, onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => VotingScreen(isDark: isDark, onThemeToggle: widget.onThemeToggle, onLogout: widget.onLogout)));
               }),
-              _drawerItem(icon: Icons.perm_media_outlined, title: "Gallery", isDark: isDark, onTap: () {
+              CustomDrawerItem(icon: Icons.perm_media_outlined, title: "Gallery", isDark: isDark, onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => HallOfLighteningScreen(isDark: isDark, onThemeToggle: widget.onThemeToggle, onLogout: widget.onLogout)));
               }),
-              _drawerItem(icon: Icons.info_outline, title: "About", isDark: isDark, onTap: () {
+              CustomDrawerItem(icon: Icons.info_outline, title: "About", isDark: isDark, onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => AboutScreen(isDark: isDark, onThemeToggle: widget.onThemeToggle, onLogout: widget.onLogout)));
               }),
-              _drawerItem(icon: Icons.people, title: "Creators", isDark: isDark, onTap: () {
+              CustomDrawerItem(icon: Icons.people, title: "Creators", isDark: isDark, onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => CreatorsScreen(isDark: isDark, onThemeToggle: widget.onThemeToggle, onLogout: widget.onLogout)));
               }),
-              _drawerItem(icon: Icons.groups, title: "Coordinators", isDark: isDark, onTap: () {
+              CustomDrawerItem(icon: Icons.groups, title: "Coordinators", isDark: isDark, onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => CoordinatorsScreen(isDark: isDark, onThemeToggle: widget.onThemeToggle, onLogout: widget.onLogout)));
               }),
-              _drawerItem(icon: Icons.groups, title: "Student Coordinators", isDark: isDark, onTap: () {
+              CustomDrawerItem(icon: Icons.groups, title: "Student Coordinators", isDark: isDark, onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => StudentCoordinatorsScreen(isDark: isDark, onThemeToggle: widget.onThemeToggle, onLogout: widget.onLogout)));
               }),
               const Spacer(),
-              _drawerItem(icon: Icons.logout, title: "Logout", isDark: isDark, onTap: widget.onLogout),
+              CustomDrawerItem(icon: Icons.logout, title: "Logout", isDark: isDark, onTap: widget.onLogout),
               const SizedBox(height: 16),
             ],
           ),
@@ -240,8 +240,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _goldCard(
-                          context: context,
+                        GoldCard(
                           title: "The Legacy",
                           content: "Thunder Thursday is the heartbeat of student creativity. Every week, the campus lights up as performers take the stage in a tradition of raw talent and electric energy.",
                           buttonText: "Join the Legacy",
@@ -250,8 +249,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ),
                         const SizedBox(height: 16),
-                        _goldCard(
-                          context: context,
+                        GoldCard(
                           title: "Event Intel",
                           content: "Join us at the Campus Hub every Thursday afternoon. The showcase brings together the entire student body.",
                           buttonText: "VIEW GALLERY",
@@ -264,7 +262,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Transform.translate(
                     offset: Offset(0, -h * 0.15),
-                    child: _creativeForceSection(context),
+                    child: const CreativeForceSection(),
                   ),
                 ],
               ),
@@ -274,86 +272,4 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-}
-
-Widget _drawerItem({required IconData icon, required String title, required bool isDark, required VoidCallback onTap}) {
-  return ListTile(leading: Icon(icon, color: primaryGold), title: Text(title), onTap: onTap);
-}
-
-Widget _goldCard({required BuildContext context, required String title, required String content, required String buttonText, required VoidCallback onPressed, bool outlined = false}) {
-  return Container(
-    padding: const EdgeInsets.all(16),
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), border: Border.all(color: primaryGold, width: 1.5)),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: primaryGold)),
-        const SizedBox(height: 10),
-        Text(content, style: Theme.of(context).textTheme.bodyMedium),
-        const SizedBox(height: 16),
-        Align(
-          alignment: Alignment.center,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: outlined ? Colors.transparent : primaryGold,
-              foregroundColor: outlined ? primaryGold : Colors.black,
-              side: outlined ? const BorderSide(color: primaryGold) : BorderSide.none,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-            ),
-            onPressed: onPressed,
-            child: Text(buttonText, style: const TextStyle(fontWeight: FontWeight.bold)),
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-Widget _creativeForceSection(BuildContext context) {
-  return Container(
-    padding: const EdgeInsets.all(20),
-    decoration: BoxDecoration(border: Border.all(color: primaryGold, width: 1.2), borderRadius: BorderRadius.circular(20)),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text("POWERING THE STAGE", style: Theme.of(context).textTheme.bodySmall?.copyWith(letterSpacing: 1.8, fontWeight: FontWeight.w600)),
-        const SizedBox(height: 6),
-        RichText(
-          text: TextSpan(
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
-            children: const [
-              TextSpan(text: "THE CREATIVE "),
-              TextSpan(text: "FORCE", style: TextStyle(color: primaryGold)),
-            ],
-          ),
-        ),
-        const SizedBox(height: 24),
-        Container(
-          padding: const EdgeInsets.all(14),
-          decoration: BoxDecoration(border: Border.all(color: primaryGold), borderRadius: BorderRadius.circular(16)),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.asset(Theme.of(context).brightness == Brightness.dark ? 'assets/images/sac_logo_dark.png' : 'assets/images/sac_logo_light.png', width: 65, height: 65),
-              const SizedBox(width: 16),
-              Expanded(child: Text("The central nervous system of campus life, ensuring every event reaches its peak potential.", style: Theme.of(context).textTheme.bodyMedium)),
-            ],
-          ),
-        ),
-        const SizedBox(height: 14),
-        Container(
-          padding: const EdgeInsets.all(14),
-          decoration: BoxDecoration(border: Border.all(color: primaryGold), borderRadius: BorderRadius.circular(16)),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.asset(Theme.of(context).brightness == Brightness.dark ? 'assets/images/abhinaya_club_logo_dark.png' : 'assets/images/abhinaya_club_logo_light.png', width: 65, height: 65),
-              const SizedBox(width: 16),
-              Expanded(child: Text("The soul of Thunder Thursday. Curation, stage management, and talent discovery.", style: Theme.of(context).textTheme.bodyMedium)),
-            ],
-          ),
-        ),
-      ],
-    ),
-  );
 }

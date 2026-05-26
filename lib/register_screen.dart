@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'home_screen.dart';
 import 'voting_screen.dart';
 import 'hall_of_lightening_screen.dart';
 import 'creators_screen.dart';
 import 'about_screen.dart';
 import 'coordinators_screen.dart';
-import 'profile_screen.dart';
 import 'widgets/app_footer.dart';
 import 'student_coordinators_screen.dart';
+import 'event_registration_form_screen.dart';
 
 const Color primaryGold = Color(0xFFD9A62E);
 
@@ -35,31 +33,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   bool showSciencesSub = false;
   bool showPharmacySub = false;
 
-  // Google Forms Links
-  final Map<String, String> formLinks = {
-    'AUS': 'https://forms.gle/adHUW4RK4ua91A32A',
-    'ACET': 'https://forms.gle/Ejd5WmvQuQrbiD5F8',
-    'Business': 'https://forms.gle/pgqLtR7xRjVHRa4V9',
-    'Forensic': 'https://forms.gle/Cup2PUPngu3BPmCi8',
-    'I Pharmacy': 'https://forms.gle/1MWoESHoe8ksBmHv8',
-    'II Pharmacy': 'https://forms.gle/1MWoESHoe8ksBmHv8',
-    'Polytechnic': 'https://forms.gle/whwjWtkoQa73Li628',
-  };
-
-  Future<void> _openForm(String key) async {
-    final url = formLinks[key];
-    if (url == null) return;
-
-    final uri = Uri.parse(url);
-    try {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not open form')),
-        );
-      }
-    }
+  void _openRegistrationForm(String schoolName, {String? subDepartment}) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => EventRegistrationFormScreen(
+          schoolName: schoolName,
+          subDepartment: subDepartment,
+          isDark: widget.isDark,
+          onThemeToggle: widget.onThemeToggle,
+          onLogout: widget.onLogout,
+        ),
+      ),
+    );
   }
 
   @override
@@ -164,7 +150,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     showSub: showEngineeringSub,
                     subButtons: const ["AUS", "ACET"],
                     onTap: () => setState(() => showEngineeringSub = !showEngineeringSub),
-                    onSubButtonTap: _openForm,
+                    onSubButtonTap: (sub) => _openRegistrationForm(
+                      'School of Engineering',
+                      subDepartment: sub,
+                    ),
                   ),
 
                   const SizedBox(height: 20),
@@ -174,7 +163,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     context: context,
                     title: "School of Business",
                     icon: Icons.business,
-                    onTap: () => _openForm('Business'),
+                    onTap: () => _openRegistrationForm('School of Business'),
                   ),
 
                   const SizedBox(height: 20),
@@ -187,7 +176,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     showSub: showSciencesSub,
                     subButtons: const ["Forensic"],
                     onTap: () => setState(() => showSciencesSub = !showSciencesSub),
-                    onSubButtonTap: _openForm,
+                    onSubButtonTap: (sub) => _openRegistrationForm(
+                      'School of Sciences',
+                      subDepartment: sub,
+                    ),
                   ),
 
                   const SizedBox(height: 20),
@@ -200,7 +192,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     showSub: showPharmacySub,
                     subButtons: const ["I Pharmacy", "II Pharmacy"],
                     onTap: () => setState(() => showPharmacySub = !showPharmacySub),
-                    onSubButtonTap: _openForm,
+                    onSubButtonTap: (sub) => _openRegistrationForm(
+                      'School of Pharmacy',
+                      subDepartment: sub,
+                    ),
                   ),
 
                   const SizedBox(height: 20),
@@ -210,7 +205,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     context: context,
                     title: "Polytechnic",
                     icon: Icons.edit,
-                    onTap: () => _openForm('Polytechnic'),
+                    onTap: () => _openRegistrationForm('Polytechnic'),
                   ),
 
                   const SizedBox(height: 40),

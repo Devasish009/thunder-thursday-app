@@ -41,7 +41,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyANytjwfO0UnHZePxbIxomE2yuPgygey9Y',
+    apiKey: const String.fromEnvironment('FIREBASE_API_KEY_WEB', defaultValue: 'YOUR_API_KEY_HERE'),
     appId: '1:361201097177:web:f72e4de76cd5ce025661c8',
     messagingSenderId: '361201097177',
     projectId: 'thunder-thursday',
@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAfnr3SRtuLKM4HbYuyV0-J5UL9ajZn-xs',
+    apiKey: const String.fromEnvironment('FIREBASE_API_KEY_ANDROID', defaultValue: 'YOUR_API_KEY_HERE'),
     appId: '1:361201097177:android:b904d236eeb2b1545661c8',
     messagingSenderId: '361201097177',
     projectId: 'thunder-thursday',
@@ -59,7 +59,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCj-GH24nGJWmhwr-pFWFrbLc2QJOkFI4E',
+    apiKey: const String.fromEnvironment('FIREBASE_API_KEY_IOS', defaultValue: 'YOUR_API_KEY_HERE'),
     appId: '1:361201097177:ios:5cccc5d86a073c915661c8',
     messagingSenderId: '361201097177',
     projectId: 'thunder-thursday',
@@ -68,7 +68,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCj-GH24nGJWmhwr-pFWFrbLc2QJOkFI4E',
+    apiKey: const String.fromEnvironment('FIREBASE_API_KEY_MACOS', defaultValue: 'YOUR_API_KEY_HERE'),
     appId: '1:361201097177:ios:5cccc5d86a073c915661c8',
     messagingSenderId: '361201097177',
     projectId: 'thunder-thursday',
@@ -77,7 +77,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyANytjwfO0UnHZePxbIxomE2yuPgygey9Y',
+    apiKey: const String.fromEnvironment('FIREBASE_API_KEY_WINDOWS', defaultValue: 'YOUR_API_KEY_HERE'),
     appId: '1:361201097177:web:86faef88d4dcf8bb5661c8',
     messagingSenderId: '361201097177',
     projectId: 'thunder-thursday',

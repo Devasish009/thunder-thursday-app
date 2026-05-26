@@ -162,7 +162,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 borderRadius: BorderRadius.circular(30),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.35),
+                                    color: Colors.black.withValues(alpha: 0.35),
                                     blurRadius: 22,
                                     offset: const Offset(0, 8),
                                   ),
@@ -350,7 +350,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             // Loading Overlay
             if (isLoading)
               Container(
-                color: Colors.black.withOpacity(0.3),
+                color: Colors.black.withValues(alpha: 0.3),
                 child: const Center(
                   child: CircularProgressIndicator(
                     color: primaryGold,

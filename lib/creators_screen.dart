@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'widgets/app_footer.dart';
-import 'home_screen.dart';
-import 'unleash_screen.dart';
 import 'hall_of_lightening_screen.dart';
 import 'register_screen.dart';
 import 'voting_screen.dart';
@@ -351,7 +349,7 @@ class CreatorsScreen extends StatelessWidget {
                         _creatorCard(
                           context,
                           "Sriram Pinninti",
-                          "A second-year undergraduate specializing in Artificial Intelligence and Machine Learning. I’m focused on building strong skills in programming, data, designing, and real-world projects to grow as a tech professional.",
+                          "A second-year undergraduate specializing in Artificial Intelligence and Machine Learning. I'm focused on building strong skills in programming, data, designing, and real-world projects to grow as a tech professional.",
                           "https://github.com/SP-1512",
                           "https://instagram.com/sriram.pinninti/",
                           "https://linkedin.com/in/sriram-pinninti",
@@ -366,6 +364,7 @@ class CreatorsScreen extends StatelessWidget {
                           "https://github.com/Devasish009",
                           "https://instagram.com/_devasish_009/",
                           "https://linkedin.com/in/devasishvenkatsaijajimoggala",
+                          portfolio: "https://devaverse.netlify.app",
                         ),
 
                         const SizedBox(height: 30),
@@ -377,8 +376,6 @@ class CreatorsScreen extends StatelessWidget {
                           "https://github.com/kumarcharanreddy",
                           "https://instagram.com/charan.3665/",
                           "https://www.linkedin.com/in/charan-kumar-reddy-kondavaripalli-a824a0336",
-
-                          
                         ),
                         const AppFooter(),
                       ],
@@ -408,121 +405,144 @@ class CreatorsScreen extends StatelessWidget {
 
   /// 🔥 CREATOR CARD FIXED
   Widget _creatorCard(
-  BuildContext context,
-  String name,
-  String description,
-  String github,
-  String instagram,
-  String linkedin,
-) {
-  List<String> parts = name.split(" ");
+    BuildContext context,
+    String name,
+    String description,
+    String github,
+    String instagram,
+    String linkedin, {
+    String? portfolio,
+  }) {
+    List<String> parts = name.split(" ");
 
-  return Container(
-    padding: const EdgeInsets.all(18),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(20),
-      border: Border.all(color: primaryGold, width: 1.5),
-      color: Theme.of(context).cardColor,
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+    return Container(
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: primaryGold, width: 1.5),
+        color: Theme.of(context).cardColor,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
 
-        /// 🔥 NAME (First normal, Second gold)
-        Center(
-          child: RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              style: const TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-              children: [
-                TextSpan(
-                  text: parts.first + " ",
-                  style: TextStyle(
-                    color: Theme.of(context)
-                        .textTheme
-                        .bodyLarge
-                        ?.color,
-                  ),
+          /// 🔥 NAME (First normal, Second gold)
+          Center(
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: const TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
                 ),
-                TextSpan(
-                  text: parts.sublist(1).join(" "),
-                  style: const TextStyle(
-                    color: primaryGold,
+                children: [
+                  TextSpan(
+                    text: "${parts.first} ",
+                    style: TextStyle(
+                      color: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
+                          ?.color,
+                    ),
+                  ),
+                  TextSpan(
+                    text: parts.sublist(1).join(" "),
+                    style: const TextStyle(
+                      color: primaryGold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          const SizedBox(height: 10),
+
+          Text(
+            description,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+
+          const SizedBox(height: 20),
+
+          /// 🔥 SOCIAL ROW (LOGOS BACK)
+          Row(
+            children: [
+              GestureDetector(
+                onTap: () => _openLink(github),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/github_logo.png',
+                      width: 22,
+                      height: 22,
+                    ),
+                    const SizedBox(width: 6),
+                    const Text("GitHub"),
+                  ],
+                ),
+              ),
+
+              const SizedBox(width: 40),
+
+              GestureDetector(
+                onTap: () => _openLink(instagram),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/instagram_logo.png',
+                      width: 22,
+                      height: 22,
+                    ),
+                    const SizedBox(width: 6),
+                    const Text("Instagram"),
+                  ],
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 16),
+
+          Row(
+            children: [
+              GestureDetector(
+                onTap: () => _openLink(linkedin),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/linkedin_logo.png',
+                      width: 22,
+                      height: 22,
+                    ),
+                    const SizedBox(width: 6),
+                    const Text("LinkedIn"),
+                  ],
+                ),
+              ),
+
+              /// 🔥 PORTFOLIO LINK (only shown if provided)
+              if (portfolio != null) ...[
+                const SizedBox(width: 40),
+                GestureDetector(
+                  onTap: () => _openLink(portfolio),
+                  child: const Row(
+                    children: [
+                      Icon(
+                        Icons.language,
+                        size: 22,
+                        color: primaryGold,
+                      ),
+                      SizedBox(width: 6),
+                      Text("Portfolio"),
+                    ],
                   ),
                 ),
               ],
-            ),
-          ),
-        ),
-
-        const SizedBox(height: 10),
-
-        Text(
-          description,
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
-
-        const SizedBox(height: 20),
-
-        /// 🔥 SOCIAL ROW (LOGOS BACK)
-        Row(
-          children: [
-            GestureDetector(
-              onTap: () => _openLink(github),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/images/github_logo.png',
-                    width: 22,
-                    height: 22,
-                  ),
-                  const SizedBox(width: 6),
-                  const Text("GitHub"),
-                ],
-              ),
-            ),
-
-            const SizedBox(width: 40),
-
-            GestureDetector(
-              onTap: () => _openLink(instagram),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/images/instagram_logo.png',
-                    width: 22,
-                    height: 22,
-                  ),
-                  const SizedBox(width: 6),
-                  const Text("Instagram"),
-                ],
-              ),
-            ),
-          ],
-        ),
-
-        const SizedBox(height: 16),
-
-        GestureDetector(
-          onTap: () => _openLink(linkedin),
-          child: Row(
-            children: [
-              Image.asset(
-                'assets/images/linkedin_logo.png',
-                width: 22,
-                height: 22,
-              ),
-              const SizedBox(width: 6),
-              const Text("LinkedIn"),
             ],
           ),
-        ),
-      ],
-    ),
-  );
-}
-
+        ],
+      ),
+    );
+  }
 }

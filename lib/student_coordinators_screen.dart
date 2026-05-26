@@ -392,13 +392,13 @@ class StudentCoordinatorsScreen extends StatelessWidget {
           _tableHeader3(context, "Name", "Role", "Bhavan"),
           const Divider(height: 1.5, thickness: 1.5, color: primaryGold),
           _tableRow3(context, "P. Manikumar", "Head", "JWB"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "R. Prem Durga Sai", "Manager", "VB"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "P. Chandra Sekhar", "Secretary", "CV"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "Chaitanya Sri Balaji Putra", "Joint Secretary", "BGB"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "K. Charan Kumar Reddy", "Treasurer", "BB"),
         ],
       ),
@@ -418,11 +418,11 @@ class StudentCoordinatorsScreen extends StatelessWidget {
           _tableHeader2(context, "Name", "Bhavan"),
           const Divider(height: 1.5, thickness: 1.5, color: primaryGold),
           _tableRow2(context, "K. Phani Sai", "KLB"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow2(context, "K. Meghana", "CV"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow2(context, "P. Manmadha Rao", "APC"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow2(context, "S. Pavani", "CB"),
         ],
       ),
@@ -442,63 +442,63 @@ class StudentCoordinatorsScreen extends StatelessWidget {
           _tableHeader3(context, "Name", "Bhavan", "role"),
           const Divider(height: 1.5, thickness: 1.5, color: primaryGold),
           _tableRow3(context, "M. Dhakshinya", "BB", "Creative Team"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "J. Venkata Sai", "BB", "Creative Team"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "S. Sri Anjan Kumar", "BGB", "Media Publicity"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "P. Ram Karthik", "BGB", "Logistics"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "K. Suneela Srivarsha", "BGB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "V. Rakesh", "CB", "Media Publicity"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "CH. Mohith Vardhan", "CB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "K. Harshitha", "CB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "K. Durga Prasad", "CV", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "CH. Rohith Sai", "ENB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "M. Kavya Sri", "ENB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "K. Bhavitha", "FB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "P. Gnanesh Sri Mouli Mohanraj", "FS", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "P. Deeptikasree Iswarya", "FS", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "K. Ananya Chowdary", "JW", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "P. Sriya", "JW", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "Sivakumar Tharun", "KLB", "Media Publicity"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "V. Durga Lakshmi", "KLB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "V. SRG Midhilesh", "NB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "B. Geetha", "NB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "D. Madhuri", "PB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "K. Bhagya", "PB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "M. Valli", "RB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "B. Siddhardh", "RB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "M. Rahul", "RTB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "B. Sagar", "RTB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "Bhavana Kothalanka", "SOB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "R. Madhurya", "SOB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "K. Neeraja", "VB", "Member"),
-          Divider(height: 1, thickness: 1, color: primaryGold.withOpacity(0.5)),
+          Divider(height: 1, thickness: 1, color: primaryGold.withValues(alpha: 0.5)),
           _tableRow3(context, "G. Vijay Shankar Pani", "VB", "Member"),
         ],
       ),
@@ -524,7 +524,7 @@ class StudentCoordinatorsScreen extends StatelessWidget {
       child: Row(
         children: [
           _TableCell(c1),
-          VerticalDivider(thickness: 1, width: 1, color: primaryGold.withOpacity(0.5)),
+          VerticalDivider(thickness: 1, width: 1, color: primaryGold.withValues(alpha: 0.5)),
           _TableCell(c2),
         ],
       ),
@@ -546,22 +546,7 @@ class StudentCoordinatorsScreen extends StatelessWidget {
     );
   }
 
-  // ── 4-column header ──
-  Widget _tableHeader4(BuildContext context, String c1, String c2, String c3, String c4) {
-    return IntrinsicHeight(
-      child: Row(
-        children: [
-          _HeaderCell(c1),
-          const VerticalDivider(thickness: 1.5, width: 1.5, color: primaryGold),
-          _HeaderCell(c2),
-          const VerticalDivider(thickness: 1.5, width: 1.5, color: primaryGold),
-          _HeaderCell(c3),
-          const VerticalDivider(thickness: 1.5, width: 1.5, color: primaryGold),
-          _HeaderCell(c4),
-        ],
-      ),
-    );
-  }
+
 
   // ── 3-column row ──
   Widget _tableRow3(BuildContext context, String c1, String c2, String c3) {
@@ -569,31 +554,16 @@ class StudentCoordinatorsScreen extends StatelessWidget {
       child: Row(
         children: [
           _TableCell(c1),
-          VerticalDivider(thickness: 1, width: 1, color: primaryGold.withOpacity(0.5)),
+          VerticalDivider(thickness: 1, width: 1, color: primaryGold.withValues(alpha: 0.5)),
           _TableCell(c2),
-          VerticalDivider(thickness: 1, width: 1, color: primaryGold.withOpacity(0.5)),
+          VerticalDivider(thickness: 1, width: 1, color: primaryGold.withValues(alpha: 0.5)),
           _TableCell(c3),
         ],
       ),
     );
   }
 
-  // ── 4-column row ──
-  Widget _tableRow4(BuildContext context, String c1, String c2, String c3, String c4) {
-    return IntrinsicHeight(
-      child: Row(
-        children: [
-          _TableCell(c1),
-          VerticalDivider(thickness: 1, width: 1, color: primaryGold.withOpacity(0.5)),
-          _TableCell(c2),
-          VerticalDivider(thickness: 1, width: 1, color: primaryGold.withOpacity(0.5)),
-          _TableCell(c3),
-          VerticalDivider(thickness: 1, width: 1, color: primaryGold.withOpacity(0.5)),
-          _TableCell(c4),
-        ],
-      ),
-    );
-  }
+
 }
 
 /// ================= DRAWER ITEM =================
@@ -611,7 +581,7 @@ Widget _drawerItem({
 
 class _HeaderCell extends StatelessWidget {
   final String text;
-  const _HeaderCell(this.text, {super.key});
+  const _HeaderCell(this.text);
 
   @override
   Widget build(BuildContext context) {
@@ -633,7 +603,7 @@ class _HeaderCell extends StatelessWidget {
 
 class _TableCell extends StatelessWidget {
   final String text;
-  const _TableCell(this.text, {super.key});
+  const _TableCell(this.text);
 
   @override
   Widget build(BuildContext context) {

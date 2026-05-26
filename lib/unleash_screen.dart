@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
-import 'unleash_screen.dart';
 import 'hall_of_lightening_screen.dart';
 import 'creators_screen.dart';
 import 'register_screen.dart';
 import 'voting_screen.dart';
 import 'about_screen.dart';
 import 'coordinators_screen.dart';
-import 'home_screen.dart';
 import 'widgets/app_footer.dart';
 import 'student_coordinators_screen.dart';
 
 
 /// 🎨 COLORS
 const Color primaryGold = Color(0xFFD9A62E);
-const Color bgLight = Color(0xFFFFF5);
+const Color bgLight = Color(0x00fffff5);
 const Color bgDark = Color(0xFF121212);
 
 class UnleashScreen extends StatelessWidget {
@@ -262,7 +259,7 @@ class UnleashScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 80,
                       fontWeight: FontWeight.bold,
-                      color: primaryGold.withOpacity(0.1),
+                      color: primaryGold.withValues(alpha: 0.1),
                       height: 1.2,
                     ),
                   ),

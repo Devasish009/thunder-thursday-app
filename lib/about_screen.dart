@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
-import 'unleash_screen.dart';
 import 'hall_of_lightening_screen.dart';
 import 'creators_screen.dart';
 import 'register_screen.dart';
 import 'voting_screen.dart';
-import 'about_screen.dart';
 import 'coordinators_screen.dart';
-import 'home_screen.dart';
 import 'widgets/app_footer.dart';
 import 'student_coordinators_screen.dart';
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'firebase_options.dart';
 
 class SplashVideoScreen extends StatefulWidget {
   final VoidCallback onFinished;

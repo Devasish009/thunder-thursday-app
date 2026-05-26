@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
-import 'unleash_screen.dart';
 import 'hall_of_lightening_screen.dart';
 import 'creators_screen.dart';
 import 'register_screen.dart';
 import 'voting_screen.dart';
 import 'about_screen.dart';
-import 'home_screen.dart';
 import 'student_coordinators_screen.dart';
 import 'widgets/app_footer.dart';
 
@@ -225,7 +222,7 @@ class CoordinatorsScreen extends StatelessWidget {
                   RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
                       ),
@@ -236,7 +233,7 @@ class CoordinatorsScreen extends StatelessWidget {
                             color: isDark ? Colors.white : Colors.black,
                           ),
                         ),
-                        TextSpan(
+                        const TextSpan(
                           text: "ordinators",
                           style: TextStyle(color: primaryGold),
                         ),
@@ -282,8 +279,8 @@ class CoordinatorsScreen extends StatelessWidget {
         border: Border.all(color: primaryGold, width: 2),
         borderRadius:  BorderRadius.circular(8),
       ),
-      child: Row(
-        children: const [
+      child: const Row(
+        children: [
           _HeaderCell("Name"),
           _HeaderCell("Role"),
         ],
